@@ -6,9 +6,9 @@ clean:
 	rm -rf build/
 
 .PHONY: build
-build:
+build: clean
 	mkdir -p build
 	go install
 	go build -ldflags "-s -X main.version=$(VERSION) -X main.build=$(BUILD)" -o build/$(NAME)
-	upx -9 build/$(NAME)
+#	upx -9 build/$(NAME)
 
